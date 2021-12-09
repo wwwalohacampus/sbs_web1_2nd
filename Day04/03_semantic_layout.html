@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: lightgray;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            height: 300px;
+            background-color: #339999;
+            padding: 20px;
+        }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 80%;
+            background-color: #f1f1f1;
+            height: 300px;
+        }
+
+        section::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        footer {
+            background-color: #ffcc00;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>semantic 요소를 이용한 레이아웃</h1>
+    <header>
+        <h2>HEADER</h2>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#">menu 001</a></li>
+                <li><a href="#">menu 002</a></li>
+                <li><a href="#">menu 003</a></li>
+                <li><a href="#">menu 004</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h1>SBS 아카데미</h1>
+            <p>
+                지나가는 나는 그러나 가을로 아이들의 멀리 듯합니다. 소학교 쉬이 계절이 마디씩 쓸쓸함과 비둘기, 그리워 한 봅니다. 쓸쓸함과 이름과, 이런 시인의 밤이 차 당신은 하나에 소녀들의 봅니다. 북간도에 이름자를 별들을 봅니다. 이름자를 오는 벌레는 아무 밤이 헤는 듯합니다.
+            </p>
+            <p>
+                지나가는 나는 그러나 가을로 아이들의 멀리 듯합니다. 소학교 쉬이 계절이 마디씩 쓸쓸함과 비둘기, 그리워 한 봅니다. 쓸쓸함과 이름과, 이런 시인의 밤이 차 당신은 하나에 소녀들의 봅니다. 북간도에 이름자를 별들을 봅니다. 이름자를 오는 벌레는 아무 밤이 헤는 듯합니다.
+            </p>
+        </article>
+    </section>
+
+    <footer>
+        <h2>FOOTER</h2>
+    </footer>
+
+    
+</body>
+</html>
