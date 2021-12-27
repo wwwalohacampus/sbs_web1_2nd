@@ -11,6 +11,7 @@
     animation-name: ball;
     animation-duration: 3s;
     animation-timing-function: linear;   
+    /* animation-timing-function: cubic-bezier(0,1.2,.47,.45);    */
     animation-iteration-count: infinite;
 }
 
