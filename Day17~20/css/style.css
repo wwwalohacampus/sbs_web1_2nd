@@ -1,0 +1,123 @@
+@charset "UTF-8";
+/* NotoSans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif; */
+
+/* 나눔스퀘어 */
+@font-face {
+    font-family: "NanumSquare_acB";
+    src: url("fonts/NanumSquare_acB.ttf");
+}
+
+/* 전체 영역 */
+.wrap {
+    /* 가로 사이즈 */
+    width: 1400px;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 헤더 */
+header { 
+    display: flex;
+    /* 아이템들 사이에 공간을 두고 정렬 */
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+header #gnb-logo { 
+    width: 240px;
+    height: 90px;
+    background: url(../img/logo.png) no-repeat left center;
+    background-size: auto 90px;
+    text-indent: -9999px;
+}
+header nav ul.gnb { height: 90px; }
+header nav ul.gnb li { 
+    display: inline-block;
+    height: 90px;
+    line-height: 90px;
+    padding: 0 30px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+header nav ul.gnb li a { font-family: "NanumSquare_acB"; }
+header nav ul.gnb li:hover a { 
+    color: cornflowerblue;
+    border-bottom: 2px solid cornflowerblue;
+    padding-bottom: 8px;
+ }
+header .category {
+    height: 90px;
+    line-height: 90px;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+header .category .btn {
+    padding: 10px 40px;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+/* 사이드 바 */
+.sidebar {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(64,64,64,0.7);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: all 1s ease-in-out;
+    z-index: -1;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.sidebar .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+}
+.sidebar .inner a {
+    display: block;
+    font-size: 60px;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+.sidebar .inner a:hover {
+    /* background-color: black; */
+    color: cornflowerblue;
+    transform: scale(1.5);
+    transition: all 0.3s;
+} 
+
+.sidebar .inner a.active {
+    /* background-color: black; */
+    
+}
+
+/* category 를 체크했으 했을 때, 사이드 바 */
+input#category:checked ~ .sidebar {
+    left: 0;
+    opacity: 1;
+    z-index: 3;
+}
+
+input[name='category'] { display: none; }
+
+.sidebar .close { 
+    position: fixed;
+    top: 5%;
+    right: 10%;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+
