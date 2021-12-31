@@ -14,7 +14,7 @@
     /* 가로 사이즈 */
     width: 1400px;
     margin: 0 auto;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: relative;
     overflow: hidden;
 }
@@ -24,7 +24,7 @@ header {
     display: flex;
     /* 아이템들 사이에 공간을 두고 정렬 */
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 
 header #gnb-logo { 
@@ -120,4 +120,152 @@ input[name='category'] { display: none; }
     cursor: pointer;
 }
 
+/* 이미지 슬라이드 */
+section.slide {
+    width: 4200px;      /* 이미지 1400px X 3장 = 4200px */
+    height: 400px;
+    position: relative;
+}
 
+section.slide ul {
+    position: absolute;
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+section.slide ul li {
+    float: left;
+    width: 1400px;
+    height: 400px;
+    box-sizing: border-box;
+}
+section.slide ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes slide {
+    0% { left: 0; }
+    33% { left: -1400px; }
+    66% { left: -2800px; }
+    100% { left: 0; }
+}
+
+
+/* section .title */
+section .title { color: #000; text-align: center;}
+section .title h2 { font-size: 45px; margin-bottom: 5px; font-weight: normal; }
+section .title h2 span { color: #ff8342; }
+section .title p { font-size: 18px; color: #555; }
+
+
+/* section - contents */
+section.contents { background-color: #fff; padding: 80px 0;}
+section.contents ul { margin: 30px auto; width: 100%; border-bottom: 1px solid #000; overflow: hidden;}
+section.contents ul li { float: left; width: calc(100%/3); height: 100%; }
+section.contents ul li a { display: block; width: 100%; height: 100%; }
+section.contents ul li a p.img { width: 100%; overflow: hidden; height: 300px; }
+section.contents ul li a p.img img { width: 100%; height: 100%; transition: all 1s; } 
+section.contents ul li a:hover p.img img { transform: scale(1.2); transition: all 1s; }
+
+section.contents ul li a .text { padding: 30px; }
+section.contents ul li a .text h3 { font-size: 20px; margin-bottom: 10px; }
+section.contents ul li a .text p { font-size: 16px; margin-bottom: 10px; }
+section.contents ul li a .text p.more { 
+    text-transform: uppercase; 
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+/* footer */
+footer { border-top: 1px solid #999; padding: 30px 0 50px; }
+footer .inner { width: 100%; margin: 0 auto; overflow: hidden;}
+footer .inner .ftLogo { float: left; } 
+footer .inner .address { float: left; margin-left: 50px; margin-top: 10px; }
+footer .inner .address li:first-child { font-weight: bold; margin-bottom: 10px; } 
+footer .inner .address li:last-child { color: #999; }
+footer .inner .list { float: right; margin-top: 10px; margin-right: 50px; }
+footer .inner .list li { float: left; margin-left: 20px; }
+footer .inner .list li a { display: block; width: 100%; height: 100%; position: relative; }
+footer .inner .list li a::after { 
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #ddd;
+    position: absolute;
+    left: -10px;
+    top: 10px;
+}
+footer .inner .list li a:hover,
+footer .inner .list li a:focus {
+    color: #ff8342; text-decoration: underline;
+}
+footer .inner .list li:last-child a { font-weight: bold; }
+
+
+/* 모바일 햄버거 메뉴  */
+.mb-category { display: none; }
+
+/* 모바일 */
+@media screen and (max-width: 600px) {
+    
+    .wrap { min-width: 320px; width: 95vw; margin: 0 auto; }
+    header {
+        position: relative;
+        min-width: 320px;
+        height: 40px;
+        width: 100%;
+        z-index: 10;
+        background-color: cornsilk;
+    }
+
+    header nav { display: none; }
+
+    header #gnb-logo { 
+        width: 120px;
+        height: 40px;
+        background-size: auto 40px;
+    }
+
+    header .category { display: none; }
+
+
+    /* 모바일 햄버거 메뉴  */
+    .mb-category { display: block; }
+    .mb-btn {
+        line-height: 40px;
+        position: absolute;
+        right: 3%;
+        cursor: pointer;
+    }
+
+    .sidebar {width: 100%;}
+    .sidebar .inner {}
+    .sidebar .inner a { font-size: 24px; }
+    .sidebar .close { font-size: 30px; }
+
+    section.slide {
+        width: 300vw;
+        height: 200px;
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+
+    section.slide ul  li {
+        width: 100vw;
+        height: 200px;
+    }
+
+    @keyframes slide {
+        0% { left: 0;}
+        33% {left: -100vw;}
+        66% {left: -200vw;}
+        100% { left: 0;}
+    }
+
+    /* sectino title 부터~ */
+
+
+}
